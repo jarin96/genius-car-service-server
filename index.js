@@ -79,8 +79,8 @@ async function run() {
                 const orders = await cursor.toArray();
                 res.send(orders);
             }
-            else{
-                res.send(403).send({message: 'forbidden access'})
+            else {
+                res.send(403).send({ message: 'forbidden access' })
             }
         })
         // Order Collection API
@@ -100,6 +100,10 @@ run().catch(console.dir);
 app.get('/', (req, res) => {
     res.send('Running Genius Server');
 });
+
+app.get('/hero', (req, res) => {
+    res.send('Hero meets hero ku')
+})
 
 app.listen(port, () => {
     console.log('Listening to port', port);
